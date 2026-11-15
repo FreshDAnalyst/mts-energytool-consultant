@@ -1,0 +1,372 @@
+
+/* =====================================
+   MTS ENERGYTOOL - MAIN STYLES
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #102b46;
+    --navy-light: #193b5b;
+    --green: #35a66f;
+    --green-light: #e9f6ef;
+    --background: #f5f7fa;
+    --white: #ffffff;
+    --text: #243447;
+    --muted: #7b8794;
+    --border: #e3e8ee;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+button,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Main application layout */
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    margin-bottom: 35px;
+}
+
+.brand h1 {
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+
+.brand p {
+    font-size: 13px;
+    color: #c4d2df;
+}
+
+.new-chat-btn {
+    background: var(--green);
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.new-chat-btn:hover {
+    background: #298b5b;
+}
+
+.sidebar-section {
+    font-size: 11px;
+    font-weight: bold;
+    color: #9fb2c4;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.sidebar-item {
+    background: var(--navy-light);
+    padding: 13px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    color: #b7c7d5;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Main content */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    height: 82px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h2 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.topbar p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.online-status {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Chat area */
+
+.chat-area {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 45px 35px 25px;
+    overflow-y: auto;
+}
+
+.welcome-screen {
+    max-width: 760px;
+    margin: 65px auto 35px;
+    text-align: center;
+}
+
+.welcome-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 25px;
+}
+
+.welcome-screen h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--navy);
+}
+
+.welcome-screen p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+/* Suggested questions */
+
+.suggestion-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.suggestion {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 16px;
+    color: var(--text);
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.5;
+    transition: 0.2s;
+}
+
+.suggestion:hover {
+    border-color: var(--green);
+    background: var(--green-light);
+}
+
+/* Chat messages */
+
+.message {
+    max-width: 85%;
+    padding: 17px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    font-size: 14px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.message.user {
+    background: var(--navy);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 3px;
+}
+
+.message.assistant {
+    background: white;
+    border: 1px solid var(--border);
+    margin-right: auto;
+    border-bottom-left-radius: 3px;
+}
+
+.message-sources {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 15px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.message-meta {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+.loading-message {
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Chat input area */
+
+.chat-footer {
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 20px 35px;
+}
+
+.chat-form {
+    max-width: 930px;
+    margin: auto;
+    display: flex;
+    gap: 12px;
+}
+
+#message-input {
+    flex: 1;
+    min-width: 0;
+    min-height: 50px;
+    max-height: 140px;
+    resize: none;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+}
+
+#message-input:focus {
+    border-color: var(--green);
+}
+
+#send-btn {
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 0 25px;
+    font-weight: bold;
+}
+
+#send-btn:hover {
+    background: #298b5b;
+}
+
+#send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.disclaimer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 13px;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 190px;
+        min-width: 190px;
+        padding: 20px 12px;
+    }
+
+    .topbar {
+        padding: 0 18px;
+    }
+
+    .chat-area {
+        padding: 25px 16px;
+    }
+
+    .welcome-screen {
+        margin-top: 35px;
+    }
+
+    .welcome-screen h1 {
+        font-size: 25px;
+    }
+
+    .suggestion-list {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-footer {
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 520px) {
+    .sidebar {
+        display: none;
+    }
+
+    .topbar h2 {
+        font-size: 16px;
+    }
+
+    .online-status {
+        font-size: 11px;
+    }
+
+    .chat-form {
+        flex-direction: column;
+    }
+
+    #send-btn {
+        min-height: 45px;
+    }
+}

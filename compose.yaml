@@ -1,0 +1,22 @@
+services:
+  mts-energytool:
+    build: .
+    container_name: mts-energytool-consultant
+    ports:
+      - "8000:8000"
+    environment:
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      LLM_MODEL: ${LLM_MODEL:-gemma3:1b}
+      EMB_MODEL: ${EMB_MODEL:-nomic-embed-text}
+      TEMPERATURE: ${TEMPERATURE:-0.0}
+      MAX_TOKENS: ${MAX_TOKENS:-2048}
+      DATABASE_URL: sqlite:////app/data/mts_energytool.db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./local_data/knowledge-base.zip:/app/local_data/knowledge-base.zip:ro
+      - mts_energytool_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  mts_energytool_data:

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МТС EnergyTool | AI-консультант</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+<div class="app-container">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">МТС</div>
+            <div class="brand-text">
+                <h2>EnergyTool</h2>
+                <span>AI-консультант</span>
+            </div>
+        </div>
+
+        <button id="new-chat-btn" class="new-chat-btn">
+            <span>＋</span>
+            Новый диалог
+        </button>
+
+        <div class="history-section">
+            <p class="section-label">ИСТОРИЯ ДИАЛОГОВ</p>
+            <div id="session-list" class="session-list">
+                <p class="history-empty">Пока нет диалогов</p>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>Система активна</span>
+            </div>
+            <p>МТС EnergyTool © 2026</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-title">
+                <h3>Энергетический консультант</h3>
+                <p>Интеллектуальная поддержка бизнеса</p>
+            </div>
+
+            <div class="online-status">
+                <span class="status-dot"></span>
+                Online
+            </div>
+        </header>
+
+        <section id="chat-area" class="chat-area">
+
+            <div id="welcome-screen" class="welcome-screen">
+                <div class="welcome-icon">⚡</div>
+
+                <h1>Добро пожаловать в МТС EnergyTool</h1>
+
+                <p class="welcome-description">
+                    Я ваш интеллектуальный энергетический консультант.
+                    Помогу разобраться в решениях МТС EnergyTool,
+                    проанализировать задачи вашего предприятия
+                    и подобрать подходящие возможности оптимизации
+                    энергозатрат.
+                </p>
+
+                <div class="suggestion-list">
+                    <button class="suggestion" type="button">
+                        Что такое МТС EnergyTool?
+                    </button>
+
+                    <button class="suggestion" type="button">
+                        Как предприятия могут контролировать
+                        потребление энергоресурсов?
+                    </button>
+
+                    <button class="suggestion" type="button">
+                        Какие решения доступны для учёта
+                        энергоресурсов?
+                    </button>
+
+                    <button class="suggestion" type="button">
+                        Как можно оптимизировать энергозатраты
+                        предприятия?
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CUSTOMER LEAD FORM -->
+
+        <section class="lead-section" style="padding: 0 24px 12px;">
+
+            <button
+                id="lead-toggle-btn"
+                type="button"
+                class="suggestion"
+                style="width: 100%;"
+            >
+                Связаться со специалистом МТС
+            </button>
+
+            <form
+                id="lead-form"
+                hidden
+                style="margin-top: 12px; padding: 16px; border: 1px solid #ddd; border-radius: 12px;"
+            >
+
+                <h3>Оставить заявку</h3>
+
+                <p>
+                    Укажите контактные данные, и специалист сможет
+                    связаться с вами.
+                </p>
+
+                <label for="lead-full-name">ФИО</label>
+
+                <input
+                    id="lead-full-name"
+                    name="full_name"
+                    type="text"
+                    maxlength="255"
+                    placeholder="Иван Иванов"
+                    required
+                >
+
+                <label for="lead-phone">Телефон</label>
+
+                <input
+                    id="lead-phone"
+                    name="phone"
+                    type="tel"
+                    maxlength="50"
+                    placeholder="+7 900 000-00-00"
+                    required
+                >
+
+                <label for="lead-company">Компания</label>
+
+                <input
+                    id="lead-company"
+                    name="company"
+                    type="text"
+                    maxlength="255"
+                    placeholder="Название компании"
+                    required
+                >
+
+                <label for="lead-summary">
+                    Кратко опишите ваш запрос
+                </label>
+
+                <textarea
+                    id="lead-summary"
+                    name="summary"
+                    rows="3"
+                    maxlength="5000"
+                    placeholder="Какая задача вас интересует?"
+                ></textarea>
+
+                <button
+                    id="lead-submit-btn"
+                    type="submit"
+                    class="send-btn"
+                >
+                    Отправить заявку
+                </button>
+
+                <p id="lead-status" role="status" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+        <footer class="chat-footer">
+
+            <form id="chat-form" class="chat-form">
+
+                <textarea
+                    id="message-input"
+                    placeholder="Напишите ваш вопрос..."
+                    rows="1"
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    id="send-btn"
+                    class="send-btn"
+                >
+                    Отправить
+                </button>
+
+            </form>
+
+            <p class="input-disclaimer">
+                Ответы формируются на основе базы знаний МТС EnergyTool.
+            </p>
+
+        </footer>
+
+    </main>
+</div>
+
+<script src="/app.js"></script>
+
+</body>
+</html>
